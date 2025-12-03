@@ -9,7 +9,7 @@ const services = [
     number: "02",
     title: "Brand Collaborations",
     description:
-      "Strategic partnerships between artists and luxury brands — creating limited editions, capsule collections and co-branded experiences.",
+      "Strategic partnerships between artists and luxury brands: creating limited editions, capsule collections and co-branded experiences.",
   },
   {
     number: "03",
@@ -21,7 +21,7 @@ const services = [
     number: "04",
     title: "Project Direction",
     description:
-      "End-to-end creative direction from concept to completion — managing artists, production and installation with discretion.",
+      "End-to-end creative direction from concept to completion: managing artists, production and installation with discretion.",
   },
 ];
 
