@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Syne:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Soft Sand as base background */
+    --background: 39 38% 93%;
+    --foreground: 0 0% 0%;
+
+    --card: 39 38% 93%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 39 38% 93%;
+    --popover-foreground: 0 0% 0%;
+
+    /* Black Ink as primary */
+    --primary: 0 0% 0%;
+    --primary-foreground: 39 38% 93%;
+
+    /* Champagne Beige as secondary */
+    --secondary: 36 30% 76%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 36 30% 86%;
+    --muted-foreground: 0 0% 35%;
+
+    /* Champagne Beige as accent */
+    --accent: 36 30% 76%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 36 20% 80%;
+    --input: 36 20% 80%;
+    --ring: 0 0% 0%;
+
+    --radius: 0px;
+
+    /* Custom tokens */
+    --stone: 36 30% 76%;
+    --stone-dark: 36 25% 68%;
+    --sand: 39 38% 93%;
+    --champagne: 36 30% 76%;
+
+    /* Typography */
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    /* Spacing */
+    --section-padding: 8rem;
+    --container-max: 1400px;
+
+    /* Transitions */
+    --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+    --sidebar-background: 39 38% 93%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 0 0% 0%;
+    --sidebar-primary-foreground: 39 38% 93%;
+    --sidebar-accent: 36 30% 76%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 36 20% 80%;
+    --sidebar-ring: 0 0% 0%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 39 38% 93%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 39 38% 93%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 39 38% 93%;
+
+    --primary: 39 38% 93%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 36 30% 76%;
+    --secondary-foreground: 0 0% 4%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 36 20% 70%;
+
+    --accent: 36 30% 76%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 39 38% 93%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 36 30% 76%;
+
+    --stone: 0 0% 12%;
+    --stone-dark: 0 0% 16%;
+    --sand: 0 0% 8%;
+    --champagne: 36 20% 25%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-[var(--container-max)] mx-auto px-6 md:px-12 lg:px-20;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-32 lg:py-40;
+  }
+
+  .text-display-xl {
+    @apply text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight leading-[0.9];
+  }
+
+  .text-display-lg {
+    @apply text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight leading-[0.95];
+  }
+
+  .text-display-md {
+    @apply text-2xl md:text-3xl lg:text-4xl font-display font-semibold tracking-tight leading-tight;
+  }
+
+  .text-body-lg {
+    @apply text-lg md:text-xl font-body font-light leading-relaxed;
+  }
+
+  .text-body {
+    @apply text-base font-body font-normal leading-relaxed;
+  }
+
+  .text-caption {
+    @apply text-xs md:text-sm font-body font-medium uppercase tracking-[0.2em];
+  }
+
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-px bg-foreground scale-x-0 origin-right transition-transform duration-500;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .link-underline:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+
+  /* Gradient backgrounds */
+  .bg-gradient-sand {
+    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--secondary) / 0.3) 100%);
+  }
+
+  .bg-gradient-elegant {
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--secondary) / 0.4) 50%, hsl(var(--background)) 100%);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-fade-up-delay-1 {
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-2 {
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-3 {
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+    opacity: 0;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(1.05);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .bg-stone {
+    background-color: hsl(var(--stone));
+  }
+
+  .bg-stone-dark {
+    background-color: hsl(var(--stone-dark));
+  }
+
+  .bg-sand {
+    background-color: hsl(var(--sand));
+  }
+
+  .bg-champagne {
+    background-color: hsl(var(--champagne));
+  }
+}
