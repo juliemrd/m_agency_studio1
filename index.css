@@ -247,4 +247,15 @@
   .bg-champagne {
     background-color: hsl(var(--champagne));
   }
+
+#contact h2 {
+  line-height: 1.25 !important;   
+  overflow: visible !important;
+  padding-bottom: 0.2em;
+}
+
+#contact .text-display-lg {
+  line-height: 1.25 !important;
+  overflow: visible !important;
+}
 }
